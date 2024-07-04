@@ -1,5 +1,4 @@
-:root {
-}
+@import "variables.scss";
 
 * {
   box-sizing: border-box;
@@ -14,7 +13,7 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background-color: $color-background;
 }
 
 a {
