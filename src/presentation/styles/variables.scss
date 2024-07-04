@@ -2,6 +2,7 @@ $color-primary: #121e6c;
 $color-secondary: #ee4243;
 $color-darkGray: #606060;
 $color-clearGray: #f3f3f3;
+$color-white: #ffffff;
 $color-background: #f6f4f9;
 $gradient-bold: linear-gradient(to right, $color-primary, $color-secondary);
 
@@ -17,12 +18,17 @@ $padding-15: 15px;
 $padding-20: 20px;
 $padding-25: 25px;
 
-$border-radius-5: 5;
-$border-radius-10: 10;
-$border-radius-15: 15;
-$border-radius-20: 20;
+$border-radius-5: 5px;
+$border-radius-10: 10px;
+$border-radius-15: 15px;
+$border-radius-20: 20px;
 
 $font-size-xsm: 14px;
 $font-size-sm: 16px;
 $font-size-md: 24px;
 $font-size-lg: 32px;
+
+$screen-sm-min: 640px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+$screen-xl-min: 1280px;
