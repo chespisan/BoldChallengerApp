@@ -1,22 +1,33 @@
 @import "app/presentation/styles/variables.scss";
+@import "app/presentation/styles/breackpoints.scss";
 
 .header {
   background: $gradient-bold;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 32px 64px;
   height: 100px;
   width: 100%;
 
   &__menu {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%;
-    width: 90%;
+    display: none;
   }
 
-  &__text {
-    color: $color-white;
+  @include sm {
+    .header {
+      &__menu {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        width: 90%;
+      }
+
+      &__text {
+        color: $color-white;
+      }
+    }
   }
 }
