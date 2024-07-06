@@ -15,22 +15,50 @@
       "filters"
       "total-sales";
     gap: 16px;
-    margin-top: 50px;
+    margin: 50px 0 10px 0;
     width: 90%;
   }
 
   &__total-sales {
     background-color: $color-white;
-    border-radius: $border-radius-10;
+    border-radius: $border-radius-15;
     grid-area: total-sales;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
   }
 
   &__title-sales {
+    display: flex;
+    justify-content: space-between;
     background: $gradient-bold;
     border-radius: $border-radius-15 $border-radius-15 0 0;
     color: $color-white;
     font-size: $font-size-xsm;
     padding: $padding-20 $padding-15;
+  }
+
+  &__tooltip &__tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background: $color-primary;
+    color: $color-white;
+    text-align: center;
+    border-radius: $border-radius-10;
+    margin-top: -30px;
+    margin-left: 16px;
+    padding: $padding-5;
+    position: absolute;
+    z-index: 1;
+    font-size: $font-size-xxsm;
+  }
+
+  &__tooltip:hover &__tooltiptext {
+    visibility: visible;
+  }
+
+  &__icon-info {
+    cursor: pointer;
   }
 
   &__info-sales {
@@ -50,8 +78,84 @@
     -webkit-text-fill-color: transparent;
   }
 
-  &__filters {
+  &__filters-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     grid-area: filters;
+  }
+
+  &__filters {
+    display: flex;
+    align-self: end;
+    position: relative;
+  }
+
+  &__filters-action {
+    background-color: $color-white;
+    border-radius: $border-radius-10;
+    color: $color-primary;
+    cursor: pointer;
+    padding: $padding-10 $padding-20;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+
+  &__modal-filters {
+    background: $color-white;
+    border-radius: $border-radius-10;
+    color: $color-primary;
+    position: absolute;
+    top: 0;
+    right: -16px;
+    height: 0;
+    width: 0;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+    transition: opacity 0.6s ease-out;
+    visibility: hidden;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $padding-10;
+  }
+
+  &__modal-filter--open {
+    visibility: visible;
+    opacity: 1;
+    height: 200px;
+    width: 240px;
+  }
+
+  &__radio-content {
+    width: 100%;
+  }
+
+  &__filter-action {
+    background-color: $color-secondary;
+    border: none;
+    border-radius: $border-radius-25;
+    color: $color-white;
+    cursor: pointer;
+    padding: $padding-15;
+    width: 100%;
+  }
+
+  &__filters-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+
+  &__icon-close {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
   }
 
   @include md {
@@ -60,4 +164,22 @@
       grid-template-areas: "total-sales filters";
     }
   }
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
